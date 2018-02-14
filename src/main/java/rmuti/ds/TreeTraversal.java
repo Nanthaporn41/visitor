@@ -1,0 +1,31 @@
+package rmuti.ds;
+
+public class TreeTraversal {
+public void preOrder(Node r, visitor v){
+	if(r==null){
+		return;
+	}
+	v.visit(r.getValue());
+	preOrder(r.left,v);
+	preOrder(r.right,v);
+}
+
+public void inOrder(Node r, visitor v){
+	if(r==null){
+		return;
+	}
+	
+	inOrder(r.left,v);
+	v.visit(r.getValue());
+	inOrder(r.right,v);
+}
+
+public void postOrder(Node r, visitor v){
+	if(r==null){
+		return;
+	}
+	postOrder(r.left,v);
+	postOrder(r.right,v);
+	v.visit(r.getValue());
+}
+}
